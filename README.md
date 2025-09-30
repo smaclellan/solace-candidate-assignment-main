@@ -39,3 +39,25 @@ npx drizzle-kit push
 ```bash
 curl -X POST http://localhost:3000/api/seed
 ```
+
+
+Missed PRs for first 3 commits
+Initial commit -e5a3493
+changes
+-Added SearchTerm state it replaced he DOM manipulation
+-Removed InnerHTMP now uses SearchTerm
+-Added search term to the input
+-reset clears search term
+-fixed specialty filtering
+-fixed case sensitive searching
+-added keys
+
+commit d09a142
+-cleaned up the UI
+-used the solace website to create a page that mimics the same styling
+-separated the components to reusable individual ones
+
+commit 3fba008
+-fixed import error
+
+Last PR for the backend shown in repo
