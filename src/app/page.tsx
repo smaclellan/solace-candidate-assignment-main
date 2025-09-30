@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Header } from "@/components/header";
-import { Nav } from "@/components/nav";
-import { Hero } from "@/components/hero";
+import { Header } from "@/components/Header";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
 import { SearchBar } from "@/components/SearchBar";
 import { AdvocatesList } from "@/components/AdvocatesList";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const [advocates, setAdvocates] = useState([]);
