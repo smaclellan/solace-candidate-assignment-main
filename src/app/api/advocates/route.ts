@@ -1,12 +1,26 @@
+import { NextResponse } from "next/server";
 import db from "../../../db";
 import { advocates } from "../../../db/schema";
-import { advocateData } from "../../../db/seed/advocates";
+
+export const dynamic = "force-dynamic"; // Prevents caching
 
 export async function GET() {
-  // Uncomment this line to use a database
-  const data = await db.select().from(advocates);
-
-  //const data = advocateData;
-
-  return Response.json({ data });
+  try {
+    const data = await db.select().from(advocates);
+    
+    return NextResponse.json({ 
+      data,
+      count: data.length
+    });
+  } catch (error) {
+    console.error("Failed to fetch advocates:", error);
+    
+    return NextResponse.json(
+      { 
+        error: "Failed to fetch advocates",
+        message: error instanceof Error ? error.message : "Unknown error"
+      },
+      { status: 500 }
+    );
+  }
 }
